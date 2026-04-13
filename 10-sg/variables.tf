@@ -21,3 +21,11 @@ variable "bastion_sg_name" {
 variable "bastion_sg_description" {
   default = "created sg for bastion instance"
 }
+
+variable "backend_alb_sg_name" {
+  default = "backend-alb"
+}
+
+variable "backend_alb_sg_description" {
+  default = "created sg for backend alb instance"
+}
