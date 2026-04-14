@@ -29,3 +29,7 @@ variable "backend_alb_sg_name" {
 variable "backend_alb_sg_description" {
   default = "created sg for backend alb instance"
 }
+
+variable "mongodb_ports_vpn" {
+  default = [22, 27017]
+}
