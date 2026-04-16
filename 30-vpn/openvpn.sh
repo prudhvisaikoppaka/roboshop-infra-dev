@@ -3,7 +3,7 @@ set -euo pipefail
 
 SCRIPTS="/usr/local/openvpn_as/scripts"
 USERNAME="openvpn"
-PASSWORD='Openvpn@123'   # Use SSM or Secrets Manager in production
+PASSWORD='Openvpn@123'    # Use SSM or Secrets Manager in production
 
 # Wait until Access Server UI is ready
 until curl -ks https://127.0.0.1:943/ >/dev/null 2>&1; do sleep 3; done
