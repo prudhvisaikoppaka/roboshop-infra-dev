@@ -30,6 +30,14 @@ variable "backend_alb_sg_description" {
   default = "created sg for backend alb instance"
 }
 
+variable "frontend_alb_sg_name" {
+  default = "frontend-alb"
+}
+
+variable "frontend_alb_sg_description" {
+  default = "created sg for frontend alb instance"
+}
+
 variable "mongodb_ports_vpn" {
   default = [22, 27017]
 }
