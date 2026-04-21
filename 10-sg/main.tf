@@ -230,7 +230,7 @@ resource "aws_security_group_rule" "mongodb_user" {
 }
 
 resource "aws_security_group_rule" "mongodb_bastion" {
-  count = length(var.mongodb_ports_vpn)
+  count                    = length(var.mongodb_ports_vpn)
   type                     = "ingress"
   from_port                = var.mongodb_ports_vpn[count.index]
   to_port                  = var.mongodb_ports_vpn[count.index]
@@ -251,7 +251,7 @@ resource "aws_security_group_rule" "redis_vpn" {
 }
 
 resource "aws_security_group_rule" "redis_bastion" {
-  count = length(var.redis_ports_vpn)
+  count                    = length(var.redis_ports_vpn)
   type                     = "ingress"
   from_port                = var.redis_ports_vpn[count.index]
   to_port                  = var.redis_ports_vpn[count.index]
@@ -261,7 +261,6 @@ resource "aws_security_group_rule" "redis_bastion" {
 }
 
 resource "aws_security_group_rule" "redis_user" {
-  count                    = length(var.redis_ports_vpn)
   type                     = "ingress"
   from_port                = 6379
   to_port                  = 6379
@@ -271,7 +270,6 @@ resource "aws_security_group_rule" "redis_user" {
 }
 
 resource "aws_security_group_rule" "redis_cart" {
-  count                    = length(var.redis_ports_vpn)
   type                     = "ingress"
   from_port                = 6379
   to_port                  = 6379
@@ -302,7 +300,6 @@ resource "aws_security_group_rule" "mysql_bastion" {
 }
 
 resource "aws_security_group_rule" "mysql_shipping" {
-  count                    = length(var.mysql_ports_vpn)
   type                     = "ingress"
   from_port                = 3306
   to_port                  = 3306
@@ -333,7 +330,6 @@ resource "aws_security_group_rule" "rabbitmq_bastion" {
 }
 
 resource "aws_security_group_rule" "rabbitmq_payment" {
-  count                    = length(var.rabbitmq_ports_vpn)
   type                     = "ingress"
   from_port                = 5672
   to_port                  = 5672
@@ -614,19 +610,19 @@ resource "aws_security_group_rule" "backend_alb_payment" {
 
 #Frontend ALB
 resource "aws_security_group_rule" "frontend_alb_http" {
-  type                     = "ingress"
-  from_port                = 80
-  to_port                  = 80
-  protocol                 = "tcp"
-  cidr_blocks = ["0.0.0.0/0"]
-  security_group_id        = module.backend_alb.sg_id
+  type              = "ingress"
+  from_port         = 80
+  to_port           = 80
+  protocol          = "tcp"
+  cidr_blocks       = ["0.0.0.0/0"]
+  security_group_id = module.backend_alb.sg_id
 }
 
 resource "aws_security_group_rule" "frontend_alb_https" {
-  type                     = "ingress"
-  from_port                = 443
-  to_port                  = 443
-  protocol                 = "tcp"
-  cidr_blocks = ["0.0.0.0/0"]
-  security_group_id        = module.frontend_alb.sg_id
+  type              = "ingress"
+  from_port         = 443
+  to_port           = 443
+  protocol          = "tcp"
+  cidr_blocks       = ["0.0.0.0/0"]
+  security_group_id = module.frontend_alb.sg_id
 }
