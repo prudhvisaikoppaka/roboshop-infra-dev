@@ -31,7 +31,7 @@ resource "aws_lb_listener" "backend_alb" {
       status_code  = "200"
     }
   }
-}
+}  
 
 resource "aws_route53_record" "backend-alb" {
   zone_id = var.zone_id
