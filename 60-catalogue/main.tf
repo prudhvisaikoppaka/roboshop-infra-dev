@@ -1,8 +1,8 @@
 resource "aws_lb_target_group" "catalogue" {
-  name     = "${var.project}-${var.environment}-catalogue" #roboshop-dev-catalogue
-  port     = 8080
-  protocol = "HTTP"
-  vpc_id   = local.vpc_id
+  name                 = "${var.project}-${var.environment}-catalogue" #roboshop-dev-catalogue
+  port                 = 8080
+  protocol             = "HTTP"
+  vpc_id               = local.vpc_id
   deregistration_delay = 120
   health_check {
     healthy_threshold   = 3
@@ -62,7 +62,7 @@ resource "aws_ec2_instance_state" "catalogue" {
 
 resource "aws_ami_from_instance" "catalogue" {
   name               = "${var.project}-${var.environment}-catalogue"
-  source_instance_id = "aws_instance.catalogue.id"
+  source_instance_id = aws_instance.catalogue.id
   depends_on         = [aws_ec2_instance_state.catalogue]
   tags = merge(
     local.common_tags,
@@ -82,5 +82,5 @@ resource "terraform_data" "catalogue_delete" {
   provisioner "local-exec" {
     command = "aws ec2 terminate-instances --instance-ids ${aws_instance.catalogue.id}"
   }
-  depends_on = [aws_ami_from_instance.catalogue] 
+  depends_on = [aws_ami_from_instance.catalogue]
 }
