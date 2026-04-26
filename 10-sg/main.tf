@@ -551,6 +551,25 @@ resource "aws_security_group_rule" "frontend_frontend_alb" {
   security_group_id        = module.frontend.sg_id
 }
 
+#Frontend ALB
+resource "aws_security_group_rule" "frontend_alb_http" {
+  type              = "ingress"
+  from_port         = 80
+  to_port           = 80
+  protocol          = "tcp"
+  cidr_blocks       = ["0.0.0.0/0"]
+  security_group_id = module.backend_alb.sg_id
+}
+
+resource "aws_security_group_rule" "frontend_alb_https" {
+  type              = "ingress"
+  from_port         = 443
+  to_port           = 443
+  protocol          = "tcp"
+  cidr_blocks       = ["0.0.0.0/0"]
+  security_group_id = module.frontend_alb.sg_id
+}
+
 #Backend ALB
 # backend ALB accepting connections from my bastion host on port no 80
 resource "aws_security_group_rule" "backend_alb_bastion" {
@@ -606,23 +625,4 @@ resource "aws_security_group_rule" "backend_alb_payment" {
   protocol                 = "tcp"
   source_security_group_id = module.payment.sg_id
   security_group_id        = module.backend_alb.sg_id
-}
-
-#Frontend ALB
-resource "aws_security_group_rule" "frontend_alb_http" {
-  type              = "ingress"
-  from_port         = 80
-  to_port           = 80
-  protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0"]
-  security_group_id = module.backend_alb.sg_id
-}
-
-resource "aws_security_group_rule" "frontend_alb_https" {
-  type              = "ingress"
-  from_port         = 443
-  to_port           = 443
-  protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0"]
-  security_group_id = module.frontend_alb.sg_id
 }
