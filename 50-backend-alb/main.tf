@@ -1,5 +1,6 @@
 module "backend_alb" {
   source = "terraform-aws-modules/alb/aws"
+  version = "9.16.0"
   internal = true # means private LB
   name                  = "${var.project}-${var.environment}-backend-alb" # roboshop-dev-backend-alb
   vpc_id                = local.vpc_id
@@ -27,7 +28,7 @@ resource "aws_lb_listener" "backend_alb" {
 
     fixed_response {
       content_type = "text/html"
-      message_body = "<h1>Hello, I am from Backend ALB<h1>"
+      message_body = "<h1>Hello, I am from Backend ALB</h1>"
       status_code  = "200"
     }
   }
