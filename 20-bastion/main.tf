@@ -7,7 +7,7 @@ resource "aws_instance" "bastion" {
 # need more storage for terraform
 root_block_device {
     volume_size = 50
-    volume_type = "gp3"
+    volume_type = "gp3" # or "gp2", depending on your preference
 }
 
   tags = merge(
