@@ -106,8 +106,8 @@ variable "payment_sg_name" {
   default = "payment"
 }
 
-variable "shipping_sg_description" {
-  default = "for shipping"
+variable "payment_sg_description" {
+  default = "for payment"
 }
 variable "mongodb_ports_vpn" {
   default = [22, 27017]
