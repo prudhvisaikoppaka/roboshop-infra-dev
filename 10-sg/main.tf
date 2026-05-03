@@ -4,8 +4,8 @@ module "mongodb" {
   project     = var.project
   environment = var.environment
 
-  sg_name        = "mongodb"
-  sg_description = "for mongodb"
+  sg_name        = var.mongodb_sg_name
+  sg_description = var.mongodb_sg_description
   vpc_id         = local.vpc_id
 }
 
