@@ -54,6 +54,14 @@ variable "redis_sg_description" {
   default = "for redis"
 }
 
+variable "mysql_sg_name" {
+  default = "mysql"
+}
+
+variable "mysql_sg_description" {
+  default = "for mysql"
+}
+
 variable "mongodb_ports_vpn" {
   default = [22, 27017]
 }
