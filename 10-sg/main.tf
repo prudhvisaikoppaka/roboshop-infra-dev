@@ -70,7 +70,7 @@ module "cart" {
   project     = var.project
   environment = var.environment
 
-  sg_name        = "cart"
+  sg_name        = var.cart_sg_name
   sg_description = "for cart"
   vpc_id         = local.vpc_id
 }
