@@ -38,13 +38,20 @@ variable "frontend_alb_sg_description" {
   default = "created sg for frontend alb instance"
 }
 
-
 variable "mongodb_sg_name" {
   default = "mongodb"
 }
 
 variable "mongodb_sg_description" {
   default = "for mongodb"
+}
+
+variable "redis_sg_name" {
+  default = "redis"
+}
+
+variable "redis_sg_description" {
+  default = "for redis"
 }
 
 variable "mongodb_ports_vpn" {
