@@ -37,8 +37,8 @@ module "rabbitmq" {
   project     = var.project
   environment = var.environment
 
-  sg_name        = "rabbitmq"
-  sg_description = "for rabbitmq"
+  sg_name        = var.rabbitmq_sg_name
+  sg_description = var.rabbitmq_sg_description
   vpc_id         = local.vpc_id
 }
 
