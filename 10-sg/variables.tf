@@ -98,8 +98,8 @@ variable "shipping_sg_name" {
   default = "shipping"
 }
 
-variable "cart_sg_description" {
-  default = "for cart"
+variable "shipping_sg_description" {
+  default = "for shipping"
 }
 
 variable "mongodb_ports_vpn" {
