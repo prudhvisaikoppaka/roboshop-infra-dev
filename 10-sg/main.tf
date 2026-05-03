@@ -48,8 +48,8 @@ module "catalogue" {
   project     = var.project
   environment = var.environment
 
-  sg_name        = "catalogue"
-  sg_description = "for catalogue"
+  sg_name        = var.catalogue_sg_name
+  sg_description = var.catalogue_sg_description
   vpc_id         = local.vpc_id
 }
 
