@@ -81,7 +81,7 @@ module "shipping" {
   project     = var.project
   environment = var.environment
 
-  sg_name        = "shipping"
+  sg_name        = var.shipping_sg_name
   sg_description = "for shipping"
   vpc_id         = local.vpc_id
 }
