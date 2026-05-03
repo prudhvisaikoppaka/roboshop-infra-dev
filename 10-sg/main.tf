@@ -92,8 +92,8 @@ module "payment" {
   project     = var.project
   environment = var.environment
 
-  sg_name        = "payment"
-  sg_description = "for payment"
+  sg_name        = var.payment_sg_name
+  sg_description = var.payment_sg_description
   vpc_id         = local.vpc_id
 }
 
