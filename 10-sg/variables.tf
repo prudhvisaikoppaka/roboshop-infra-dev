@@ -78,6 +78,14 @@ variable "catalogue_sg_description" {
   default = "for catalogue"
 }
 
+variable "user_sg_name" {
+  default = "user"
+}
+
+variable "catalogue_sg_description" {
+  default = "for catalogue"
+}
+
 variable "mongodb_ports_vpn" {
   default = [22, 27017]
 }
