@@ -59,8 +59,8 @@ module "user" {
   project     = var.project
   environment = var.environment
 
-  sg_name        = "user"
-  sg_description = "for user"
+  sg_name        = var.user_sg_name
+  sg_description = var.user_sg_description
   vpc_id         = local.vpc_id
 }
 
