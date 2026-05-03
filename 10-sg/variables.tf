@@ -90,8 +90,8 @@ variable "cart_sg_name" {
   default = "cart"
 }
 
-variable "user_sg_description" {
-  default = "for user"
+variable "cart_sg_description" {
+  default = "for cart"
 }
 
 variable "mongodb_ports_vpn" {
