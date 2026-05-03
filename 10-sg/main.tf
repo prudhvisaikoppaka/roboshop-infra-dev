@@ -147,8 +147,8 @@ module "vpn" {
   project     = var.project
   environment = var.environment
 
-  sg_name        = "vpn"
-  sg_description = "for vpn"
+  sg_name        = var.vpn_sg_name
+  sg_description = var.vpn_sg_description
   vpc_id         = local.vpc_id
 }
 
