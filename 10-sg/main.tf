@@ -26,8 +26,8 @@ module "mysql" {
   project     = var.project
   environment = var.environment
 
-  sg_name        = "mysql"
-  sg_description = "for mysql"
+  sg_name        = var.mysql_sg_name
+  sg_description = var.mysql_sg_description
   vpc_id         = local.vpc_id
 }
 
