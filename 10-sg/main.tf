@@ -82,7 +82,7 @@ module "shipping" {
   environment = var.environment
 
   sg_name        = var.shipping_sg_name
-  sg_description = "for shipping"
+  sg_description = var.shipping_sg_description
   vpc_id         = local.vpc_id
 }
 
