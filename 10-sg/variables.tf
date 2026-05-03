@@ -62,6 +62,14 @@ variable "mysql_sg_description" {
   default = "for mysql"
 }
 
+variable "rabbitmq_sg_name" {
+  default = "rabbitmq"
+}
+
+variable "rabbitmq_sg_description" {
+  default = "for rabbitmq"
+}
+
 variable "mongodb_ports_vpn" {
   default = [22, 27017]
 }
