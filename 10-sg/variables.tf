@@ -109,6 +109,8 @@ variable "payment_sg_name" {
 variable "payment_sg_description" {
   default = "for payment"
 }
+
+
 variable "mongodb_ports_vpn" {
   default = [22, 27017]
 }
