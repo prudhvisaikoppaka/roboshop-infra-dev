@@ -71,7 +71,7 @@ module "cart" {
   environment = var.environment
 
   sg_name        = var.cart_sg_name
-  sg_description = "for cart"
+  sg_description = var.cart_sg_description
   vpc_id         = local.vpc_id
 }
 
