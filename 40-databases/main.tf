@@ -178,7 +178,7 @@ resource "aws_route53_record" "redis" {
 
 resource "aws_route53_record" "mysql" {
   zone_id         = var.zone_id
-  name            = "mysql-${var.environment}.${var.zone_name}"
+  name            = "mysql-${var.environment}.${var.zone_name}" #mysql-dev.prudhvisai.space
   type            = "A"
   ttl             = 1
   records         = [aws_instance.mysql.private_ip]
