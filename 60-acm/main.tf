@@ -1,5 +1,5 @@
 resource "aws_acm_certificate" "prudhvisai" {
-  domain_name       = "dev.${var.zone_name}"
+  domain_name       = "${var.environment}.${var.zone_name}"
   validation_method = "DNS"
 
   tags = merge(
