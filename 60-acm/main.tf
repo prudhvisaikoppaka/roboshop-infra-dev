@@ -1,4 +1,4 @@
-resource "aws_acm_certificate" "dev.prudhvisai" {
+resource "aws_acm_certificate" "prudhvisai" {
   domain_name       = "dev.${var.zone_name}"
   validation_method = "DNS"
 
