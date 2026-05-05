@@ -14,7 +14,7 @@ resource "aws_acm_certificate" "prudhvisai" {
   }
 }
 
-resource "aws_route53_record" "dev.prudhvisai" {
+resource "aws_route53_record" "prudhvisai" {
   for_each = {
     for dvo in aws_acm_certificate.prudhvisai.domain_validation_options : dvo.domain_name => {
       name   = dvo.resource_record_name
