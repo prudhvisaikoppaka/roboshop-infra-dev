@@ -56,7 +56,7 @@ resource "aws_cloudfront_distribution" "roboshop" {
   }
 }
 
-Create Route53 records for the CloudFront distribution aliases
+# Create Route53 records for the CloudFront distribution aliases
 
 resource "aws_route53_record" "cloudfront" {
   for_each = aws_cloudfront_distribution.s3_distribution.aliases
