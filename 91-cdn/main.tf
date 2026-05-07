@@ -58,15 +58,15 @@ resource "aws_cloudfront_distribution" "roboshop" {
 
 # Create Route53 records for the CloudFront distribution aliases
 
-# resource "aws_route53_record" "cloudfront" {
-#   for_each = aws_cloudfront_distribution.s3_distribution.aliases
-#   zone_id  = var.zone_id
-#   name     = "cdn.${var.zone_name}"
-#   type     = "A"
+resource "aws_route53_record" "cloudfront" {
+  for_each = aws_cloudfront_distribution.s3_distribution.aliases
+  zone_id  = var.zone_id
+  name     = "cdn.${var.zone_name}"
+  type     = "A"
 
-#   alias {
-#     name                   = aws_cloudfront_distribution.roboshop.domain_name
-#     zone_id                = aws_cloudfront_distribution.roboshop.hosted_zone_id
-#     evaluate_target_health = false
-#   }
-# }
+  alias {
+    name                   = aws_cloudfront_distribution.roboshop.domain_name
+    zone_id                = aws_cloudfront_distribution.roboshop.hosted_zone_id
+    evaluate_target_health = false
+  }
+}
