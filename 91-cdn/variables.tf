@@ -10,6 +10,6 @@ variable "zone_id" {
   default = "Z08496491D9BJEMR7DC94"
 }
 
-# variable "zone_name" {
-#   default = "prudhvisai.space"
-# }
+variable "zone_name" {
+  default = "prudhvisai.space"
+}
