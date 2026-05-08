@@ -58,7 +58,7 @@ resource "aws_cloudfront_distribution" "roboshop" {
 
 # Create Route53 records for the CloudFront distribution aliases
 
-resource "aws_route53_record" "cloudfront" {
+resource "aws_route53_record" "roboshop" { 
   zone_id  = var.zone_id
   name     = "cdn.${var.zone_name}"
   type     = "A"
