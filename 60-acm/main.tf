@@ -31,7 +31,7 @@ resource "aws_route53_record" "prudhvisai" {
   zone_id         = var.zone_id
 }
 
-# resource "aws_acm_certificate_validation" "prudhvisai" {
-#   certificate_arn         = aws_acm_certificate.prudhvisai.arn
-#   validation_record_fqdns = [for record in aws_route53_record.prudhvisai : record.fqdn]
-# }
+resource "aws_acm_certificate_validation" "prudhvisai" {
+  certificate_arn         = aws_acm_certificate.prudhvisai.arn
+  validation_record_fqdns = [for record in aws_route53_record.prudhvisai : record.fqdn]
+}
