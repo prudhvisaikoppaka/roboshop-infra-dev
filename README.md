@@ -2,7 +2,7 @@
 
 Terraform code that builds the complete AWS environment for **RoboShop**, an e-commerce application made of 11 microservices (Node.js, Java, Python, Nginx, MongoDB, MySQL, Redis, RabbitMQ).
 
-The environment is split into **12 small Terraform stacks** that are applied in order. Each stack has its own remote state and shares its outputs with the next stacks through **AWS SSM Parameter Store**, so no stack reads another stack's state file directly.
+#The environment is split into **12 small Terraform stacks** that are applied in order. Each stack has its own remote state and shares its outputs with the next stacks through **AWS SSM Parameter Store**, so no stack reads another stack's state file directly.
 
 > Hands-on lab project, built while learning DevOps with the RoboShop training application. The infrastructure code, modules and automation are my own work.
 
